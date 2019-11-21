@@ -108,3 +108,6 @@ venv/
 
 # VS-Code
 .vscode/
+
+# Production Configuration File
+config.production.toml

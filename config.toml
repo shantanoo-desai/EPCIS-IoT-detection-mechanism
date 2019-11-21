@@ -1,0 +1,21 @@
+[DocumentDB]
+host = 'localhost'
+port = 27017
+dbName = 'epcis'
+collection = 'EventData'
+[DocumentDB.credentials]
+username = 'admin'
+password = 'mongo_password'
+
+[SensorDB]
+host = 'localhost'
+port = 8086
+dbName = 'IoTData'
+[SensorDB.credentials]
+ssl = true
+verify_ssl = false
+username = 'user'
+password = 'influx_password'
+
+[Blockchain]
+endpoint = 'http://example-blockchain-endpoint.com/sensorBatch'

@@ -115,7 +115,7 @@ if __name__ == '__main__':
 
     logger.info('Reading Configuration File')
 
-    with open('config.production.toml') as conf_file:
+    with open('config.toml') as conf_file:
         CONF = toml.load(conf_file)
 
     # all subsystem configurations

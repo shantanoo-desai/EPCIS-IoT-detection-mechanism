@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  epcis-iot-detect:
+    image: shantanoodesai/epcis-iot-detection:latest
+    volumes:
+      - ./config.production.toml:/app/config.toml:ro
+    network: host

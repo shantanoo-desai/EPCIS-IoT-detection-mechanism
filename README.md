@@ -58,3 +58,23 @@ The solution is part of the [NIMBLE-Project](https://github.com/nimble-platform)
 - Execute the app using:
 
       python main.py
+
+### Development using Docker
+
+- Update the image using:
+
+        docker build -t epcis-iot-detection .
+
+
+## Deployment using Docker
+
+1. Create a `config.production.toml` with your production parameters in it.
+
+2. Execute the following in the Terminal where the `config.production.toml` file exists:
+
+        docker run --name="epcis-iot-detection" -v $(pwd)/config.production.toml:/app/config.toml:ro \
+        --net=host --restart=always shantanoodesai/epcis-iot-detection:latest
+
+3. Track the log files using:
+
+        docker logs -f epcis-iot-detection

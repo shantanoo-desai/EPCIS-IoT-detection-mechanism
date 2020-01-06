@@ -20,5 +20,6 @@ def send_to_bc(api, generated_hash):
     r = requests.post(api, data=data)
     if r.status_code == 200:
         logger.info('BC Response: ' + r.text)
+        return True
     else:
         return False

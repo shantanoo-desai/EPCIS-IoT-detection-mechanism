@@ -1,4 +1,8 @@
 import requests
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 
 def send_to_bc(api, generated_hash):
@@ -15,10 +19,6 @@ def send_to_bc(api, generated_hash):
     data = {'hash': generated_hash}
     r = requests.post(api, data=data)
     if r.status_code == 200:
-        response = r.json()
-        if response['success']:
-            return True
-        else:
-            return False
+        logger.info('BC Response: ' + r.text)
     else:
         return False
